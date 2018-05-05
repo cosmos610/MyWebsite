@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <title>登陆</title>
+ <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+ <style>
+  body{
+   padding-top:50px;
+  }
+  label{
+   color: #bce8f1;
+  }
+  h1{
+   color: #c4e3f3;
+  }
+ </style>
+</head>
+<body background="bg.jpg">
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+ <div class="container">
+  <div class="navbar-header">
+   <a href="#" class="navbar-brand">导航</a>
+  </div>
+  <div id="navbar" class="collapse navbar-collapse">
+   <ul class="nav navbar-nav">
+    <li ><a href="index.php">主页</a></li>
+    <li  class="active"><a href="#"  class="active">登陆</a></li>
+    <li ><a href="register.html">注册</a></li>
+    <li ><a href="intro.html">网站简介</a></li>
+    <li ><a href="About.html">关于我</a></li>
+   </ul>
+  </div>
+ </div>
+</nav>
+<div class="container">
+ <h1 style="text-align:center">请登陆</h1><br/><br/>
+ <div >
+  <form role="form" name='form' class="form" method="post"  action='login.php' onSubmit="return check();" >
+   <div class="form-group">
+    <label class="col-sm-2 control-label">用户名：</label>
+    <input type="text" name="username" id="usrname" class="col-sm-4" placeholder="username">
+    <label class="col-sm-6">请输入您的用户名</label><br/>
+   </div>
+   <div class="form-group">
+    <label class="col-sm-2 control-label">密码：</label>
+    <input type="password" name="passwd1" id="passwd" class="col-sm-4" placeholder="password">
+    <label class="col-sm-6">请输入您的密码</label><br/>
+   </div>
+   <div class="col-sm-offset-2">
+    <input type="submit"  class="btn btn-default" name="submit" value="登陆" />
+    <input type="button"  class="btn btn-danger" value="退出" onClick="ask_close()" />
+    <hr>
+   </div>
+  </form>
+ </div>
+</div>
+<script language="javascript">
+    function ask_close(){
+        if(confirm("您确定要退出登陆吗？你输入的信息不会被保存！")){
+            window.opener=null;
+            window.open('','_self');
+            window.close();
+        }
+        else{
+        }
+    }
+</script>
+</body>
+</html>
