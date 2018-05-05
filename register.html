@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Webcam Live From LYL</title>
+</head>
+ <body>
+ <!--注册基本界面，使用表单post-->
+ <div class="wrapper">  
+        <div class="container">  
+  <h1 style="text-align:center">请注册一个用户名</h1>
+  <form name='form' class="form" method="post"  action='register.php' onSubmit="return check();" >
+		用户名：<input type="text" name="username" id="usrname"><br/>请输入6-12位用户名<br/>
+		密码：<input type="password" name="passwd1" id="passwd1"><br/>请输入6-16位密码<br/>  
+		确认密码：<input type="password" name="passwd2" id="passwd2"><br/>将密码再输入一遍<br/>
+		性别：<input type="text" name="sex" id="sex"><br/>请输入男、女或者保密<br/>
+		学院：<input type="text" name="institute" id="insti"><br/>
+		特征码：<input type="text" name="condicode" id="cond"> <br/>请输入网站服务人员提供的特征码。如没有，请输入“无”<br/>
+		邮箱：<input type="text" name="mail" id="email"> <br/>
+		手机号码（选填）：<input type="text" name="tel" id="tel"> <br/>
+		<input type="submit"  name="submit" value="注册" />
+		<input type="button"  value="退出" onClick="ask_close()" />
+    <hr>
+  </form>
+		</div>  
+  </div>  
+<!--函数部分-->
+<script language="javascript">
+<!--退出-->
+function ask_close(){
+    if(confirm("您确定要退出注册吗？")){
+        window.opener=null;
+        window.open('','_self');
+        window.close();
+    }
+    else{
+    }
+}
+<!--检查输入信息合法性-->
+function check()  
+        { 	   if(form.usrname.value.length<6 || form.usrname.value.length>16)  
+				{  
+					alert('用户名不合法！请输入6-16位用户名');  
+					form.usrname.focus();  
+					return false;  
+				}  
+				if(form.passwd1.value.length<6 ||form.passwd1.value.length>16)  
+				{  
+					alert('密码不合法！请输入6-16位密码');  
+					form.passwd1.focus();  
+					return false;  
+				}  
+				if(form.passwd1.value != form.passwd2.value)//判断两次输入的密码是否一致  
+				{  
+					alert("两次输入的密码不一致！");  
+					form.passwd1.focus();  
+					return false;  
+				}
+				if(form.sex.value !="男"  )//判断性别输入
+				{	if(form.sex.value !="女")
+						{
+							if(form.sex.value !="保密")
+								{
+									alert('性别不合法，请按要求输入');  
+									return false; 
+								}
+						}
+				}
+				
+														
+		}
+        
+</script>
+
+ </body>
+</html>

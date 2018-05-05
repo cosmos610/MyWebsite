@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>LYL live </title>
+ </head>
+ <body>
+  <!--表单文件-->
+  <h1 align="center"> 欢迎来到我的直播网站！ <h1>
+  <form name='form' class="form" method='post' action='login.php' onSubmit="return check()">  
+  用户名：<input type="text" name="username" id="usrname">密码：
+  <input type="text" name="passwd1" id="passwd">
+  <br/>
+  <input type="submit" id="submit" name="登陆" value="提交">
+  <input type="button"  value="退出" onClick="ask_close()" />
+  <br/><a href="register.html" class="cc">register</a></button>  
+  </form>  
+<!--退出函数-->       
+  <script language="javascript">
+	function ask_close(){
+    if(confirm("您确定要退出登陆吗？你输入的信息不会被保存！")){
+        window.opener=null;
+        window.open('','_self');
+        window.close();
+    }
+    else{
+    }
+} 
+  </script>
+ </body>
+</html>
